@@ -40,3 +40,4 @@ Superfluid を調査・学習するためのリポジトリです。
 4. [Superfluid - QuickStart](https://docs.superfluid.finance/superfluid/developers/quickstart)
 5. [Superfluid - GitHub](https://github.com/superfluid-finance)
 6. [Test Super Token Faucet](https://docs.superfluid.finance/superfluid/developers/super-tokens/super-token-faucet)
+7. [Super Tokens Factory Contract](https://docs.superfluid.finance/docs/protocol/super-tokens/guides/deploy-super-token/deploy-wrapped-super-token)
