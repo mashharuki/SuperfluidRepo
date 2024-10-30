@@ -1,6 +1,6 @@
 name: test
 
-on: workflow_dispatch
+on: main
 
 env:
   FOUNDRY_PROFILE: ci
