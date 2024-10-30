@@ -1,0 +1,9 @@
+{
+  "name": "superfluid-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "deploy:PureSuperToken": "forge script script/PureSuperToken.s.sol:PureSuperTokenProxyScript"
+  }
+}

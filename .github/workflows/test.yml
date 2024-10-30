@@ -1,9 +1,9 @@
-name: test
+name: Contract test CI
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 
 env:
   FOUNDRY_PROFILE: ci
@@ -13,7 +13,7 @@ jobs:
     strategy:
       fail-fast: true
 
-    name: Foundry project
+    name: Contract test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,14 +26,14 @@ jobs:
           version: nightly
 
       - name: Run Forge build
+        id: build
         run: |
           cd superfluid-example
           forge --version
           forge build --sizes
-        id: build
 
       - name: Run Forge tests
+        id: test
         run: |
           cd superfluid-example
           forge test -vvv
-        id: test
