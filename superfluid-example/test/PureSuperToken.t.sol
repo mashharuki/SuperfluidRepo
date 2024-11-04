@@ -12,6 +12,8 @@ import {PureSuperTokenProxy} from "../src/PureSuperToken.sol";
  */
 contract PureSuperTokenProxyTest is Test {
   address internal constant _OWNER = address(0x1);
+  address internal constant _TESTWALLET = address(0x2);
+
   PureSuperTokenProxy internal _superTokenProxy;
   SuperfluidFrameworkDeployer.Framework internal _sf;
 
@@ -27,6 +29,9 @@ contract PureSuperTokenProxyTest is Test {
     assert(address(_superTokenProxy) != address(0));
   }
 
+  /**
+   * 1000トークン発行してみるテストコード
+   */
   function testSuperTokenBalance() public {
     _superTokenProxy = new PureSuperTokenProxy();
     _superTokenProxy.initialize(
@@ -39,5 +44,11 @@ contract PureSuperTokenProxyTest is Test {
     ISuperToken superToken = ISuperToken(address(_superTokenProxy));
     uint balance = superToken.balanceOf(_OWNER);
     assert(balance == 1000);
+
+    // 名前やシンボルを確認
+    string memory name = superToken.name();
+    string memory symbol = superToken.symbol();
+    assertEq(name, "TestToken");
+    assertEq(symbol, "TST");
   }
 }

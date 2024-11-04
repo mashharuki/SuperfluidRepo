@@ -24,7 +24,7 @@ $ forge build
 ### Test
 
 ```shell
-$ forge test
+$ forge test -vvv
 ```
 
 ### Format
@@ -69,4 +69,10 @@ $ cast <subcommand>
 $ forge --help
 $ anvil --help
 $ cast --help
+```
+
+repmapping の設定は以下で確認
+
+```bash
+forge remappings
 ```
