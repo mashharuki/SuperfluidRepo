@@ -53,6 +53,12 @@ $ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --pri
 
 ### Deploy PureSuperToken
 
+before
+
+```bash
+source .env
+```
+
 ```bash
 yarn deploy:PureSuperToken --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv --private-key $PRIVATE_KEY
 ```

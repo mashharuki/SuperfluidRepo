@@ -5,7 +5,7 @@ import {Test} from "forge-std/Test.sol";
 import {ISuperToken} from "@superfluid-finance/ethereum-contracts/contracts/interfaces/superfluid/ISuperfluid.sol";
 import {SuperfluidFrameworkDeployer} from "@superfluid-finance/ethereum-contracts/contracts/utils/SuperfluidFrameworkDeployer.sol";
 import {ERC1820RegistryCompiled} from "@superfluid-finance/ethereum-contracts/contracts/libs/ERC1820RegistryCompiled.sol";
-import {PureSuperTokenProxy} from "../src/PureSuperToken.sol";
+import {PureSuperToken} from "./../src/PureSuperToken.sol";
 
 /**
  * PureSuperToken コントラクト用のテストコード
@@ -14,7 +14,7 @@ contract PureSuperTokenProxyTest is Test {
   address internal constant _OWNER = address(0x1);
   address internal constant _TESTWALLET = address(0x2);
 
-  PureSuperTokenProxy internal _superTokenProxy;
+  PureSuperToken internal _superTokenProxy;
   SuperfluidFrameworkDeployer.Framework internal _sf;
 
   function setUp() public {
@@ -25,7 +25,7 @@ contract PureSuperTokenProxyTest is Test {
   }
 
   function testDeploy() public {
-    _superTokenProxy = new PureSuperTokenProxy();
+    _superTokenProxy = new PureSuperToken();
     assert(address(_superTokenProxy) != address(0));
   }
 
@@ -33,7 +33,7 @@ contract PureSuperTokenProxyTest is Test {
    * 1000トークン発行してみるテストコード
    */
   function testSuperTokenBalance() public {
-    _superTokenProxy = new PureSuperTokenProxy();
+    _superTokenProxy = new PureSuperToken();
     _superTokenProxy.initialize(
       _sf.superTokenFactory,
       "TestToken",

@@ -2,9 +2,10 @@
 pragma solidity ^0.8.13;
 
 import {Script} from "forge-std/Script.sol";
-import {PureSuperTokenProxy} from "../src/PureSuperToken.sol";
+import {PureSuperToken} from "./../src/PureSuperToken.sol";
 import {Upgrades} from "openzeppelin-foundry-upgrades/Upgrades.sol";
 import {ISuperTokenFactory} from "@superfluid-finance/ethereum-contracts/contracts/interfaces/superfluid/ISuperfluid.sol";
+import {console} from "forge-std/console.sol";
 
 /**
  * PureSuperTokenデプロイ用のスクリプト
@@ -17,7 +18,7 @@ contract PureSuperTokenProxyScript is Script {
     address proxy = Upgrades.deployUUPSProxy(
       "PureSuperToken.sol",
       abi.encodeCall(
-        PureSuperTokenProxy.initialize,
+        PureSuperToken.initialize,
         (
           ISuperTokenFactory(0x254C2e152E8602839D288A7bccdf3d0974597193),
           "Super Fake Token2",
@@ -27,6 +28,8 @@ contract PureSuperTokenProxyScript is Script {
         )
       )
     );
+
+    console.log("PureSuperTokenProxy deployed at: %s", proxy);
 
     vm.stopBroadcast();
   }

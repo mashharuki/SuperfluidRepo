@@ -4,6 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "deploy:PureSuperToken": "forge script script/PureSuperToken.s.sol:PureSuperTokenProxyScript"
+    "deploy:PureSuperToken": "forge script script/PureSuperToken.s.sol:PureSuperTokenProxyScript --force"
   }
 }

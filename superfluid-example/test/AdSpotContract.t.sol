@@ -6,7 +6,7 @@ import {TestGovernance, Superfluid, ConstantFlowAgreementV1, CFAv1Library, Super
 import {SuperfluidFrameworkDeployer} from "@superfluid-finance/ethereum-contracts/contracts/utils/SuperfluidFrameworkDeployer.sol";
 import {SuperTokenV1Library} from "@superfluid-finance/ethereum-contracts/contracts/apps/SuperTokenV1Library.sol";
 import {TestToken} from "@superfluid-finance/ethereum-contracts/contracts/utils/TestToken.sol";
-import {AdSpotContract} from "../src/AdSpotContract.sol";
+import {AdSpotContract} from "./../src/AdSpotContract.sol";
 
 /**
  * AdSpotContract test code

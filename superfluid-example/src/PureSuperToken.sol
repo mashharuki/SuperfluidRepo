@@ -17,7 +17,7 @@ interface IPureSuperToken is ISuperToken {
 /**
  * The Proxy contract for a Pure SuperToken with preminted initial supply.
  */
-contract PureSuperTokenProxy is CustomSuperTokenBase, UUPSProxy {
+contract PureSuperToken is CustomSuperTokenBase, UUPSProxy {
   // This shall be invoked exactly once after deployment, needed for the token contract to become operational.
   function initialize(
     ISuperTokenFactory factory,
