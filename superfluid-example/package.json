@@ -10,6 +10,7 @@
     "fmt": "forge fmt",
     "test": "forge test -vvv",
     "deploy:Counter": "forge script script/Counter.s.sol:CounterScript --force",
-    "deploy:PureSuperToken": "forge script script/PureSuperToken.s.sol:PureSuperTokenProxyScript --force"
+    "deploy:PureSuperToken": "forge script script/PureSuperToken.s.sol:PureSuperTokenProxyScript --force",
+    "deploy:AdSpotContract": "forge script script/AdSpotContract.s.sol:AdSpotContractScript --force"
   }
 }

@@ -63,9 +63,25 @@ source .env
 yarn deploy:PureSuperToken --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv --private-key $PRIVATE_KEY
 ```
 
+実際にデプロイした SuperToken コントラクト
+
+[0x5Eb49590d8521Ca45082c5Be9622BFddd1d04D7c](https://sepolia.etherscan.io/address/0x5Eb49590d8521Ca45082c5Be9622BFddd1d04D7c)
+
 ```bash
 yarn deploy:Counter --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv --private-key $PRIVATE_KEY
 ```
+
+```bash
+yarn deploy:AdSpotContract --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv --private-key $PRIVATE_KEY
+```
+
+実際にデプロイした AdSpotContract コントラクト
+
+[0x29Eed2c5D0313f4052a1Bd0eFbE8725DA753fA2B](https://sepolia.etherscan.io/address/0x29Eed2c5D0313f4052a1Bd0eFbE8725DA753fA2B)
+
+デプロイ時に NFT を発行する。
+
+[Pool Admin NFT](https://sepolia.etherscan.io/token/0x1bd3b6522102f9ea406807f8ecaeb2d96278a83f)
 
 ### Cast
 
@@ -83,6 +99,40 @@ number の値を読み取る
 
 ```bash
 cast call 0xd52DD0DcF92ff5714402eF9f3CB5f8A75bDcCf37 "number" --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+```
+
+SuperToken の残高を取得する。
+
+```bash
+cast --to-dec $(cast call 0x5eb49590d8521ca45082c5be9622bfddd1d04d7c "balanceOf(address owner)" 0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY)
+```
+
+トークン名とシンボル名を取得する。
+
+```bash
+cast --to-ascii $(cast call 0x5eb49590d8521ca45082c5be9622bfddd1d04d7c "name()" --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY)
+```
+
+```bash
+cast --to-ascii $(cast call 0x5eb49590d8521ca45082c5be9622bfddd1d04d7c "symbol()" --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY)
+```
+
+500 SuperToken を送信する。
+
+```bash
+cast send 0x5eb49590d8521ca45082c5be9622bfddd1d04d7c "transfer(address,uint256)" 0x29Eed2c5D0313f4052a1Bd0eFbE8725DA753fA2B 50000000000000000000 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+```
+
+createFlow を行う。
+
+```bash
+cast send 0x5eb49590d8521ca45082c5be9622bfddd1d04d7c "transfer(address,uint256)" 0x29Eed2c5D0313f4052a1Bd0eFbE8725DA753fA2B 1000 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+```
+
+selfRegister を実行する。
+
+```bash
+cast send 0x29Eed2c5D0313f4052a1Bd0eFbE8725DA753fA2B "selfRegister(bool,bool,bool)" true true true --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
 ### Help
