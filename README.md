@@ -43,3 +43,5 @@ Superfluid を調査・学習するためのリポジトリです。
 7. [Super Tokens Factory Contract](https://docs.superfluid.finance/docs/protocol/super-tokens/guides/deploy-super-token/deploy-wrapped-super-token)
 8. [contract-addresses](https://docs.superfluid.finance/docs/protocol/contract-addresses)
 9. [Super Token Deploy Page](https://v2.docs.superfluid.finance/docs/protocol/super-tokens/guides/deploy-super-token/deploy-pure-super-token)
+10. [Superfluid Dashboard](https://app.superfluid.finance/)
+11. [Create, Update, and Delete Flows](https://docs.superfluid.finance/docs/protocol/money-streaming/guides/create-update-delete-flow)
