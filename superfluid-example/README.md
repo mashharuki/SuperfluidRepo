@@ -51,7 +51,7 @@ $ anvil
 $ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
 ```
 
-### Deploy PureSuperToken
+### Deploy Contracts
 
 before
 
@@ -63,10 +63,26 @@ source .env
 yarn deploy:PureSuperToken --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv --private-key $PRIVATE_KEY
 ```
 
+```bash
+yarn deploy:Counter --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv --private-key $PRIVATE_KEY
+```
+
 ### Cast
 
 ```shell
 $ cast <subcommand>
+```
+
+increment する
+
+```bash
+cast send 0xd52DD0DcF92ff5714402eF9f3CB5f8A75bDcCf37 "increment()" --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY
+```
+
+number の値を読み取る
+
+```bash
+cast call 0xd52DD0DcF92ff5714402eF9f3CB5f8A75bDcCf37 "number" --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
 ### Help

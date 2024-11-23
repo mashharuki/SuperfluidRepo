@@ -4,6 +4,12 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "build": "forge build",
+    "clean": "forge clean",
+    "coverage": "forge coverage",
+    "fmt": "forge fmt",
+    "test": "forge test -vvv",
+    "deploy:Counter": "forge script script/Counter.s.sol:CounterScript --force",
     "deploy:PureSuperToken": "forge script script/PureSuperToken.s.sol:PureSuperTokenProxyScript --force"
   }
 }
