@@ -83,6 +83,14 @@ yarn deploy:AdSpotContract --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv
 
 [Pool Admin NFT](https://sepolia.etherscan.io/token/0x1bd3b6522102f9ea406807f8ecaeb2d96278a83f)
 
+FlowSender をデプロイする。
+
+```bash
+yarn deploy:FlowSender --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv --private-key $PRIVATE_KEY
+```
+
+[0x09601578E73ebf6744C7aAd6455Fa4B9870eBdF9](https://sepolia.etherscan.io/address/0x09601578E73ebf6744C7aAd6455Fa4B9870eBdF9)
+
 ### Cast
 
 ```shell
@@ -135,6 +143,36 @@ selfRegister を実行する。
 cast send 0x29Eed2c5D0313f4052a1Bd0eFbE8725DA753fA2B "selfRegister(bool,bool,bool)" true true true --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
+gainDAI を行う。
+
+```bash
+cast send 0x09601578E73ebf6744C7aAd6455Fa4B9870eBdF9 "gainDaiX()" --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+```
+
+createFlow を行う。
+
+```bash
+cast send 0x09601578E73ebf6744C7aAd6455Fa4B9870eBdF9 "createStream(int96, address)" 10 0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+```
+
+updateFlow を行う。
+
+```bash
+cast send 0x09601578E73ebf6744C7aAd6455Fa4B9870eBdF9 "updateStream(int96, address)" 1000 0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+```
+
+deleteFlow を行う。
+
+```bash
+cast send 0x09601578E73ebf6744C7aAd6455Fa4B9870eBdF9 "deleteStream(address)" 0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+```
+
+readFlowRate で指定したアドレスの FlowRate の値を読み取る。
+
+```bash
+cast --to-dec $(cast call 0x09601578E73ebf6744C7aAd6455Fa4B9870eBdF9 "readFlowRate(address)" 0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY)
+```
+
 ### Help
 
 ```shell
@@ -148,3 +186,9 @@ repmapping の設定は以下で確認
 ```bash
 forge remappings
 ```
+
+## FlowSplitter コントラクト
+
+## 関連コントラクト
+
+[Token Super fDAI Fake Token Sepolia](https://sepolia.etherscan.io/address/0x9ce2062b085a2268e8d769ffc040f6692315fd2c)

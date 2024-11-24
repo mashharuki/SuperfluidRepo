@@ -14,6 +14,53 @@ interface IFakeDAI is IERC20 {
 }
 
 /**
+ * FakeDAI contract
+ */
+contract FakeDAI is IFakeDAI {
+  string public name = "FakeDAI";
+  string public symbol = "fDAI";
+  uint8 public decimals = 18;
+
+  uint256 public override totalSupply;
+
+  mapping(address => uint256) public override balanceOf;
+  mapping(address => mapping(address => uint256)) public override allowance;
+
+  function mint(address account, uint256 amount) external override {
+    totalSupply += amount;
+    balanceOf[account] += amount;
+  }
+
+  function approve(
+    address spender,
+    uint256 amount
+  ) external override returns (bool) {
+    allowance[msg.sender][spender] = amount;
+    return true;
+  }
+
+  function transfer(
+    address recipient,
+    uint256 amount
+  ) external override returns (bool) {
+    balanceOf[msg.sender] -= amount;
+    balanceOf[recipient] += amount;
+    return true;
+  }
+
+  function transferFrom(
+    address sender,
+    address recipient,
+    uint256 amount
+  ) external override returns (bool) {
+    balanceOf[sender] -= amount;
+    balanceOf[recipient] += amount;
+    allowance[sender][msg.sender] -= amount;
+    return true;
+  }
+}
+
+/**
  * FlowSender contract
  */
 contract FlowSender {
@@ -23,7 +70,10 @@ contract FlowSender {
 
   ISuperToken public daix;
 
-  // fDAIx address on Polygon Mumbai = 0x5D8B4C2554aeB7e86F387B4d6c00Ac33499Ed01f
+  /**
+   * コンストラクター
+   * fDAIx address on Polygon Mumbai = 0x5D8B4C2554aeB7e86F387B4d6c00Ac33499Ed01f
+   */
   constructor(ISuperToken _daix) {
     daix = _daix;
   }
