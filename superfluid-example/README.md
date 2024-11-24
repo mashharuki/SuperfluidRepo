@@ -91,6 +91,22 @@ yarn deploy:FlowSender --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv --p
 
 [0x09601578E73ebf6744C7aAd6455Fa4B9870eBdF9](https://sepolia.etherscan.io/address/0x09601578E73ebf6744C7aAd6455Fa4B9870eBdF9)
 
+FlowSpiltter をデプロイする。
+
+```bash
+yarn deploy:FlowSplitter --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv --private-key $PRIVATE_KEY
+```
+
+[0x9c66778e867d4346a18c221534c6113b73a055bf](https://sepolia.etherscan.io/address/0x9c66778e867d4346a18c221534c6113b73a055bf)
+
+DistributionContract をデプロイする。
+
+```bash
+yarn deploy:DistributionContract --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv --private-key $PRIVATE_KEY
+```
+
+[0x57f9e5a558942ff27637c7ab9abdfa8e19732c8d](https://sepolia.etherscan.io/address/0x57f9e5a558942ff27637c7ab9abdfa8e19732c8d)
+
 ### Cast
 
 ```shell
