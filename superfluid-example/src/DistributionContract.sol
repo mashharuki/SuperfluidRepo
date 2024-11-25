@@ -67,4 +67,18 @@ contract DistributionContract {
     // Create stream
     daix.createFlow(receiver, flowRate);
   }
+
+  /**
+   * 分配する
+   */
+  function distribute(uint256 amount) public {
+    daix.distributeToPool(address(this), pool, amount);
+  }
+
+  /**
+   * 分配するフローを設定する
+   */
+  function distributeFlow(int96 flowRate) public {
+    daix.distributeFlow(address(this), pool, flowRate);
+  }
 }

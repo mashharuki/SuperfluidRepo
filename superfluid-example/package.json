@@ -14,6 +14,7 @@
     "deploy:AdSpotContract": "forge script script/AdSpotContract.s.sol:AdSpotContractScript --force",
     "deploy:FlowSender": "forge script script/FlowSender.s.sol:FlowSenderScript --force",
     "deploy:FlowSplitter": "forge script script/FlowSplitter.s.sol:FlowSplitterScript --force",
-    "deploy:DistributionContract": "forge script script/DistributionContract.s.sol:DistributionContractScript --force"
+    "deploy:DistributionContract": "forge script script/DistributionContract.s.sol:DistributionContractScript --force",
+    "createPool": "forge script script/CreatePool.s.sol:CreatePoolScript --force"
   }
 }

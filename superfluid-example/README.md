@@ -105,7 +105,7 @@ DistributionContract をデプロイする。
 yarn deploy:DistributionContract --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv --private-key $PRIVATE_KEY
 ```
 
-[0x57f9e5a558942ff27637c7ab9abdfa8e19732c8d](https://sepolia.etherscan.io/address/0x57f9e5a558942ff27637c7ab9abdfa8e19732c8d)
+[0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301](https://sepolia.etherscan.io/address/0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301)
 
 ### Cast
 
@@ -187,6 +187,42 @@ readFlowRate で指定したアドレスの FlowRate の値を読み取る。
 
 ```bash
 cast --to-dec $(cast call 0x09601578E73ebf6744C7aAd6455Fa4B9870eBdF9 "readFlowRate(address)" 0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY)
+```
+
+DistributionContract で gainDaiX する。
+
+```bash
+cast send 0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301 "gainDaiX()" --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+```
+
+cretePool を行う。
+
+```bash
+yarn createPool --rpc-url $SEPOLIA_RPC_URL --broadcast -vvvv --private-key $PRIVATE_KEY
+```
+
+createStreamToPool を行う。
+
+```bash
+cast send 0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301 "createStreamToPool" 0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072 100 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+```
+
+updateMemberUnits を行う。
+
+```bash
+cast send 0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301 "updateMemberUnits" 0x1431ea8af860C3862A919968C71f901aEdE1910E 3 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+```
+
+distributeFlow を行う。
+
+```bash
+cast send 0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301 "distributeFlow" 10 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+```
+
+distribute を行う。
+
+```bash
+cast send 0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301 "distribute" 1000 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
 ### Help
