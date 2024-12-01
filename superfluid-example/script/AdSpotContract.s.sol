@@ -19,7 +19,7 @@ contract AdSpotContractScript is Script {
     // AdSpotContractのデプロイ
     // 引数にSuperTokenのアドレスを指定
     AdSpotContract adSpotContract = new AdSpotContract(
-      ISuperToken(address(0x005eb49590d8521ca45082c5be9622bfddd1d04d7c))
+      ISuperToken(address(0x9Ce2062b085A2268E8d769fFC040f6692315fd2c))
     );
 
     console.log("AdSpotContract deployed at: %s", address(adSpotContract));

@@ -337,4 +337,26 @@ contract AdSpotContract is CFASuperAppBase {
     // Get flow rate
     return acceptedToken.getFlowRate(address(this), receiver);
   }
+
+  /**
+   * updates Units for a specific member
+   */
+  function updateMemberUnits(address memberAddress, uint128 newUnits) external {
+    // Update member units
+    acceptedToken.updateMemberUnits(pool, memberAddress, newUnits);
+  }
+
+  /**
+   * 分配する
+   */
+  function distribute(uint256 amount) public {
+    acceptedToken.distributeToPool(address(this), pool, amount);
+  }
+
+  /**
+   * 分配するフローを設定する
+   */
+  function distributeFlow(int96 flowRate) public {
+    acceptedToken.distributeFlow(address(this), pool, flowRate);
+  }
 }

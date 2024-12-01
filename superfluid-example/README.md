@@ -107,6 +107,16 @@ yarn deploy:DistributionContract --rpc-url $SEPOLIA_RPC_URL --broadcast --verify
 
 [0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301](https://sepolia.etherscan.io/address/0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301)
 
+AdSpotContract をデプロイする
+
+```bash
+yarn deploy:AdSpotContract --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv --private-key $PRIVATE_KEY
+```
+
+[0x46cf3d478e21adc760a7d519adf6a77902d6a6ff](https://sepolia.etherscan.io/address/0x46cf3d478e21adc760a7d519adf6a77902d6a6ff)
+
+---
+
 ### Cast
 
 ```shell
@@ -223,6 +233,16 @@ distribute を行う。
 
 ```bash
 cast send 0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301 "distribute" 1000 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+```
+
+---
+
+以下は、 AdSpotContract に対する操作
+
+createFlow を行う。
+
+```bash
+cast send 0x46cf3d478e21adc760a7d519adf6a77902d6a6ff "createStream(int96, address)" 10 0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
 ### Help

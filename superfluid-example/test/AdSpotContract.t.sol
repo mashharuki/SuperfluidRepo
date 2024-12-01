@@ -34,7 +34,7 @@ contract AdSpotContractTest is Test {
   function setUp() public {
     sepoliaFork = vm.createSelectFork(SEPOLIA_RPC_URL);
     // SuperTokenはあらかじめ作っておくこと！
-    daix = ISuperToken(address(0x005eb49590d8521ca45082c5be9622bfddd1d04d7c));
+    daix = ISuperToken(address(0x9Ce2062b085A2268E8d769fFC040f6692315fd2c));
     adSpotContract = new AdSpotContract(daix);
     account1 = address(0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072);
     account2 = address(0x1431ea8af860C3862A919968C71f901aEdE1910E);
