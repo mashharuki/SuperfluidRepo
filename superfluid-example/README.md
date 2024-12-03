@@ -214,7 +214,7 @@ yarn createPool --rpc-url $SEPOLIA_RPC_URL --broadcast -vvvv --private-key $PRIV
 createStreamToPool を行う。
 
 ```bash
-cast send 0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301 "createStreamToPool" 0x51908F598A5e0d8F1A3bAbFa6DF76F9704daD072 100 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+cast send 0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301 "createStreamToPool" 0x9C679d55F5286e7eA50e4Da97700b2316366147d 100 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
 updateMemberUnits を行う。
@@ -226,13 +226,13 @@ cast send 0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301 "updateMemberUnits" 0x1431e
 distributeFlow を行う。
 
 ```bash
-cast send 0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301 "distributeFlow" 10 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+cast send 0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301 "distributeFlow" 100 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
 distribute を行う。
 
 ```bash
-cast send 0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301 "distribute" 1000 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
+cast send 0x42F08AA61794dC6ebDbE7DA14d34b1BE4452f301 "distribute" 100 --rpc-url $SEPOLIA_RPC_URL --private-key $PRIVATE_KEY --etherscan-api-key $ETHERSCAN_API_KEY
 ```
 
 ---

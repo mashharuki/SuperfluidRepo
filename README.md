@@ -32,6 +32,16 @@ Superfluid を調査・学習するためのリポジトリです。
       ✨  Done in 21.13s.
     ```
 
+## distribution させる方法(メモ)
+
+1. pool を作る。
+
+2. 分配するメンバーを設定させる。
+
+3. Pool コントラクトに SuperToken を送る。
+
+4. distributionFlow メソッドを呼び出す。
+
 ### 参考文献
 
 1. [Superfluid Docs](https://www.superfluid.finance/)
