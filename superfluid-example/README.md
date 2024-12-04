@@ -259,6 +259,22 @@ repmapping の設定は以下で確認
 forge remappings
 ```
 
+## Wrapper SuperToken の作り方
+
+以下のサイトで ERC20 トークンをアドレスを指定して作成する。
+
+[Guide - deploy-wrapped-super-token](https://docs.superfluid.finance/docs/protocol/super-tokens/guides/deploy-super-token/deploy-wrapped-super-token)
+
+実際に作成したトークン
+
+[Super USDC (USDCx)](https://sepolia.etherscan.io/token/0xdc2365d28367931beb3ccbfdcb2463bdf3e8e69f)
+
+その後、TokenExplorer に掲載してほしい場合は、
+
+[submit-token-dashboard](https://docs.superfluid.finance/docs/protocol/contribute/submit-token-dashboard)
+
+でサブミットする必要があるらしい。
+
 ## FlowSplitter コントラクト
 
 ## 関連コントラクト
